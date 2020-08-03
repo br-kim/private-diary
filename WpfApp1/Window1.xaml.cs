@@ -27,7 +27,8 @@ namespace WpfApp1
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
             string titleContent = titleBox.Text;
-            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data");
+            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data\");
+            string savePath = di.FullName +@"\" +titleBox.Text+".txt";
             if (!di.Exists)
             {
                 di.Create();
@@ -37,7 +38,12 @@ namespace WpfApp1
             {
                 titleContent = titleContent.Replace(c, '_');
             }
-            string savePath = di.FullName+@"\"+nowDate+titleContent+".txt";
+
+            if (titleBox.IsEnabled)
+            {
+                savePath = di.FullName + @"\" + nowDate + titleContent + ".txt";
+            }
+
             System.IO.File.WriteAllText(savePath, contentBox.Text, Encoding.UTF8);
             Window.GetWindow(this).Close();
         }
