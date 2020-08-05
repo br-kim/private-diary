@@ -18,6 +18,8 @@ namespace WpfApp1
     /// </summary>
     public partial class Window1 : Window
     {
+        private static string nowMonthDate = DateTime.Now.ToString("yy_MM");
+        private System.IO.DirectoryInfo directoryPathInfo = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data\" + nowMonthDate);
         public Window1()
         {
             InitializeComponent();
@@ -26,8 +28,9 @@ namespace WpfApp1
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
+            
             string titleContent = titleBox.Text;
-            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data\");
+            System.IO.DirectoryInfo di = directoryPathInfo;
             string savePath = di.FullName +@"\" +titleBox.Text+".txt";
             if (!di.Exists)
             {
@@ -58,7 +61,7 @@ namespace WpfApp1
             if (((MainWindow)Application.Current.MainWindow).postListBox.SelectedItem != null)
             {
                 var item = ((MainWindow)Application.Current.MainWindow).postListBox.SelectedItem;
-                string path = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory).FullName + @"\diary_data\" + item.ToString();
+                string path = directoryPathInfo.FullName+ @"\" + item.ToString();
                 string content = System.IO.File.ReadAllText(path);
                 titleBox.Text = item.ToString().Replace(".txt","");
                 titleBox.IsEnabled = false;

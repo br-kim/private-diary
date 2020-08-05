@@ -34,8 +34,9 @@ namespace WpfApp1
 
         private void Get_Directory_File_Name()
         {
+            string nowMonthDate = DateTime.Now.ToString("yy_MM");
             List<String> nameList = new List<string>();
-            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data");
+            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data\" + nowMonthDate);
             if (!di.Exists)
             {
                 di.Create();
