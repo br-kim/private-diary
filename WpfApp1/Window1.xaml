@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Activated="Activated_Window"
-        Title="Window1" Height="450" Width="800">
+        Title="일기 작성" Height="450" Width="798">
     <Grid>
         <TextBox x:Name="titleBox" HorizontalAlignment="Left" Height="29" Margin="53,25,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="523" IsEnabled="True"/>
         <TextBox x:Name="contentBox" HorizontalAlignment="Left" Height="286" Margin="53,94,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="523" AcceptsReturn="True" VerticalScrollBarVisibility="Visible"/>
-        <Button Content="저장" HorizontalAlignment="Left" Height="45" Margin="629,263,0,0" VerticalAlignment="Top" Width="145" Click="Save_Button_Click"/>
-        <Button Content="취소" HorizontalAlignment="Left" Height="42" Margin="629,338,0,0" VerticalAlignment="Top" Width="145" Click="Cancel_Button_Click"/>
+        <Button Content="저장" HorizontalAlignment="Left" Height="45" Margin="618,263,0,0" VerticalAlignment="Top" Width="145" Click="Save_Button_Click"/>
+        <Button Content="취소" HorizontalAlignment="Left" Height="42" Margin="618,338,0,0" VerticalAlignment="Top" Width="145" Click="Cancel_Button_Click"/>
 
     </Grid>
 </Window>

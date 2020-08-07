@@ -6,9 +6,22 @@
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
         Activated="Activated_Window"
-        Title="MainWindow" Height="450" Width="800">
+        Title="일기 목록" Height="445" Width="772">
     <Grid>
-        <Button Content="글 쓰기" HorizontalAlignment="Left" Height="49" Margin="553,322,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click"/>
-        <ListBox x:Name="postListBox" HorizontalAlignment="Left" Height="327" Margin="55,44,0,0" VerticalAlignment="Top" Width="452" MouseDoubleClick="postListBox_MouseDoubleClick"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="161*"/>
+            <ColumnDefinition Width="611*"/>
+        </Grid.ColumnDefinitions>
+        <Button Content="글 쓰기" HorizontalAlignment="Left" Height="49" Margin="390,322,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click" Grid.Column="1"/>
+        <ListBox x:Name="postListBox" HorizontalAlignment="Left" Height="327" Margin="55,44,0,0" VerticalAlignment="Top" Width="452" MouseDoubleClick="postListBox_MouseDoubleClick" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+            <ListBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleX="0.8"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="2.282"/>
+                </TransformGroup>
+            </ListBox.RenderTransform>
+        </ListBox>
     </Grid>
 </Window>
