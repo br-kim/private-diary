@@ -8,11 +8,8 @@
         Activated="Activated_Window"
         Title="일기 목록" Height="445" Width="772">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="161*"/>
-            <ColumnDefinition Width="611*"/>
-        </Grid.ColumnDefinitions>
-        <Button Content="글 쓰기" HorizontalAlignment="Left" Height="49" Margin="390,322,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click" Grid.Column="1"/>
+
+        <Button Content="글 쓰기" HorizontalAlignment="Left" Height="49" Margin="562,319,0,0" VerticalAlignment="Top" Width="163" Click="Button_Click"/>
         <ListBox x:Name="postListBox" HorizontalAlignment="Left" Height="327" Margin="55,44,0,0" VerticalAlignment="Top" Width="452" MouseDoubleClick="postListBox_MouseDoubleClick" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
             <ListBox.RenderTransform>
                 <TransformGroup>
@@ -23,5 +20,8 @@
                 </TransformGroup>
             </ListBox.RenderTransform>
         </ListBox>
+        <Label x:Name="label1" Content="" HorizontalAlignment="Left" Height="49" Margin="552,73,0,0" VerticalAlignment="Top" Width="173" HorizontalContentAlignment="Center"/>
+        <Button Content="&lt;" HorizontalAlignment="Left" Height="39" Margin="546,140,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click_1"/>
+        <Button Content="&gt;" HorizontalAlignment="Left" Height="39" Margin="638,140,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click_2"/>
     </Grid>
 </Window>

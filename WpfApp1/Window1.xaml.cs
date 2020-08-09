@@ -18,19 +18,22 @@ namespace WpfApp1
     /// </summary>
     public partial class Window1 : Window
     {
-        private static string nowMonthDate = DateTime.Now.ToString("yy_MM");
-        private System.IO.DirectoryInfo directoryPathInfo = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data\" + nowMonthDate);
+        static DateTime datetime = ((MainWindow)Application.Current.MainWindow).datetime;
+        private System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data\" + datetime.ToString("yy_MM"));
+        
+
         public Window1()
         {
             InitializeComponent();
+            datetime = ((MainWindow)Application.Current.MainWindow).datetime;
         }
 
 
         private void Save_Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            datetime = ((MainWindow)Application.Current.MainWindow).datetime;
+            System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data\" + datetime.ToString("yy_MM"));
             string titleContent = titleBox.Text;
-            System.IO.DirectoryInfo di = directoryPathInfo;
             string savePath = di.FullName +@"\" +titleBox.Text+".txt";
             if (!di.Exists)
             {
@@ -60,8 +63,10 @@ namespace WpfApp1
         {
             if (((MainWindow)Application.Current.MainWindow).postListBox.SelectedItem != null)
             {
+                datetime = ((MainWindow)Application.Current.MainWindow).datetime;
+                System.IO.DirectoryInfo di = new System.IO.DirectoryInfo(AppDomain.CurrentDomain.BaseDirectory + @"\diary_data\" + datetime.ToString("yy_MM"));
                 var item = ((MainWindow)Application.Current.MainWindow).postListBox.SelectedItem;
-                string path = directoryPathInfo.FullName+ @"\" + item.ToString();
+                string path = di.FullName+ @"\" + item.ToString();
                 string content = System.IO.File.ReadAllText(path);
                 titleBox.Text = item.ToString().Replace(".txt","");
                 titleBox.IsEnabled = false;
