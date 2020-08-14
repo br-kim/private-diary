@@ -23,5 +23,6 @@
         <Label x:Name="label1" Content="" HorizontalAlignment="Left" Height="49" Margin="552,73,0,0" VerticalAlignment="Top" Width="173" HorizontalContentAlignment="Center"/>
         <Button Content="&lt;" HorizontalAlignment="Left" Height="39" Margin="546,140,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click_1"/>
         <Button Content="&gt;" HorizontalAlignment="Left" Height="39" Margin="638,140,0,0" VerticalAlignment="Top" Width="92" Click="Button_Click_2"/>
+        <Button Content="Button" HorizontalAlignment="Left" Height="50" Margin="562,238,0,0" VerticalAlignment="Top" Width="163"/>
     </Grid>
 </Window>
